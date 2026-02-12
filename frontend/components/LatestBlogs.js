@@ -13,7 +13,7 @@ export default function LatestBlogs() {
 
   const fetchLatestBlogs = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/blogs/latest', {
+      const res = await axios.get('http://localhost:5000/api/blogs/latest', {
         params: { limit: 6 }
       });
       setBlogs(res.data);

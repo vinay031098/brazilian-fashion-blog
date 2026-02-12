@@ -35,7 +35,7 @@ export default function AdminPage() {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/blogs', {
+      const res = await axios.get('http://localhost:5000/api/blogs', {
         params: { limit: 100 }
       });
       setBlogs(res.data.blogs);
@@ -46,7 +46,7 @@ export default function AdminPage() {
 
   const fetchSocialMedia = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/social-media');
+      const res = await axios.get('http://localhost:5000/api/social-media');
       setSocialMedia(res.data);
     } catch (error) {
       console.error('Error fetching social media:', error);
@@ -90,12 +90,12 @@ export default function AdminPage() {
 
     try {
       if (editingBlog) {
-        await axios.put(`http://localhost:5001/api/blogs/${editingBlog._id}`, data, {
+        await axios.put(`http://localhost:5000/api/blogs/${editingBlog._id}`, data, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         alert('Blog updated successfully!');
       } else {
-        await axios.post('http://localhost:5001/api/blogs', data, {
+        await axios.post('http://localhost:5000/api/blogs', data, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         alert('Blog created successfully!');
@@ -129,7 +129,7 @@ export default function AdminPage() {
     if (!confirm('Are you sure you want to delete this blog?')) return;
     
     try {
-      await axios.delete(`http://localhost:5001/api/blogs/${id}`);
+      await axios.delete(`http://localhost:5000/api/blogs/${id}`);
       alert('Blog deleted successfully!');
       fetchBlogs();
     } catch (error) {
