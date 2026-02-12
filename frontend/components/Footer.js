@@ -13,7 +13,7 @@ export default function Footer() {
 
   const fetchSocialMedia = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/social-media');
+      const res = await axios.get('http://localhost:5000/api/social-media');
       setSocialMedia(res.data);
     } catch (error) {
       console.error('Error fetching social media:', error);

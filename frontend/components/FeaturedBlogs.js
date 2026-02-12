@@ -14,7 +14,7 @@ export default function FeaturedBlogs() {
 
   const fetchFeaturedBlogs = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/blogs/featured');
+      const res = await axios.get('http://localhost:5000/api/blogs/featured');
       setBlogs(res.data);
     } catch (error) {
       console.error('Error fetching featured blogs:', error);

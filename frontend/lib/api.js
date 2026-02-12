@@ -1,7 +1,7 @@
 // API Configuration
 // This file centralizes API URL management for easy deployment
 
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 // Helper function to build API endpoints
 export const API_ENDPOINTS = {

@@ -13,7 +13,7 @@ export default function RelatedBlogs({ category, currentSlug }) {
 
   const fetchRelatedBlogs = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/blogs', {
+      const res = await axios.get('http://localhost:5000/api/blogs', {
         params: { category, published: true, limit: 3 }
       });
       const filtered = res.data.blogs.filter(blog => blog.slug !== currentSlug);

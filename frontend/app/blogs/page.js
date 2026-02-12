@@ -7,7 +7,7 @@ async function getBlogs(searchParams) {
   const category = searchParams.category || '';
   
   try {
-    const res = await axios.get(`http://localhost:5001/api/blogs`, {
+    const res = await axios.get(`http://localhost:5000/api/blogs`, {
       params: { page, category, published: true, limit: 12 }
     });
     return res.data;

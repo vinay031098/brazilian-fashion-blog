@@ -7,7 +7,7 @@ import ShareButtons from '@/components/ShareButtons';
 
 async function getBlog(slug) {
   try {
-    const res = await axios.get(`http://localhost:5001/api/blogs/${slug}`);
+    const res = await axios.get(`http://localhost:5000/api/blogs/${slug}`);
     return res.data;
   } catch (error) {
     console.error('Error fetching blog:', error);
